@@ -8,7 +8,10 @@
 @import "css/post.css";
 
 /* Import the _includes/css/code.css (needs postCSS plugin) */
-@import "css/code.css";
+/* @import "css/code.css"; */
+@import "css/code-light.css" (prefers-color-scheme: light);
+@import "css/code-dark.css" (prefers-color-scheme: dark);
+
 
 /* Make the links black */
 :root {
@@ -30,4 +33,10 @@ main {
 /* Search tweak */
 .search {
   margin-top: var(--row-gap-xsmall);
+}
+
+/* Code style hacks */
+pre {
+  background: var(--code-background);
+  border: 1px solid var(--code-border);
 }

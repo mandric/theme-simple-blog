@@ -52,10 +52,16 @@ export default function (options: Options = {}) {
 
     // HighlightJs
     site.remoteFile(
-      "_includes/css/code.css",
+      "_includes/css/code-vs.css",
       "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/vs.min.css",
-      // "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css",
-      // "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github-dark.min.css",
+    );
+    site.remoteFile(
+      "_includes/css/code-light.css",
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css",
+    );
+    site.remoteFile(
+      "_includes/css/code-dark.css",
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github-dark.min.css",
     );
   };
 }
