@@ -7,6 +7,9 @@
 @import "css/post-list.css";
 @import "css/post.css";
 
+/* Import the _includes/css/code.css (needs postCSS plugin) */
+@import "css/code.css";
+
 /* Make the links black */
 :root {
   --color-link: var(--color-base);
