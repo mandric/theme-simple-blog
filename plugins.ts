@@ -1,7 +1,8 @@
 import date from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
-import prism, { Options as PrismOptions } from "lume/plugins/prism.ts";
+// import prism, { Options as PrismOptions } from "lume/plugins/prism.ts";
+import codeHighlight, { Options as HighlightJsOptions} from "lume/plugins/code_highlight.ts";
 import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
@@ -15,7 +16,7 @@ import image from "https://deno.land/x/lume_markdown_plugins@v0.4.0/image.ts";
 import type { Page, Site } from "lume/core.ts";
 
 export interface Options {
-  prism?: Partial<PrismOptions>;
+  highlightJs?: Partial<HighlightJsOptions>;
 }
 
 /** Configure the site */
@@ -24,7 +25,8 @@ export default function (options: Options = {}) {
     site.use(postcss())
       .use(basePath())
       .use(toc())
-      .use(prism(options.prism))
+      // .use(prism(options.prism))
+      .use(codeHighlight())
       .use(readingTime())
       .use(date())
       .use(metas())
@@ -46,6 +48,20 @@ export default function (options: Options = {}) {
     site.remoteFile(
       "_includes/css/ds.css",
       "https://unpkg.com/@lumeland/ds/ds.css",
+    );
+
+    // HighlightJs
+    site.remoteFile(
+      "_includes/css/code-vs.css",
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/vs.min.css",
+    );
+    site.remoteFile(
+      "_includes/css/code-light.css",
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css",
+    );
+    site.remoteFile(
+      "_includes/css/code-dark.css",
+      "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github-dark.min.css",
     );
   };
 }
