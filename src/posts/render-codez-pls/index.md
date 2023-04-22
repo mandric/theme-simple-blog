@@ -8,14 +8,14 @@ tags:
   - Code
 ---
 
-## Problem
-
 Most of what I write is code samples, with snippets of english. Well written
 code should be readable and expressive.  To make it easier to read and parse by
 humans we use syntax highlighting.  Unfortunately even today to get code in
 various languages nicely rendered on a web site can require some work.  So here
 is my personal reference page where I can manually validate syntax highlighting
 works as expected.
+
+<!--more-->
 
 The two projects I found are [Prism](https://prismjs.com) and
 [highlight.js](https://highlightjs.org). highlight.js provides a [VS Code
@@ -24,6 +24,10 @@ which is how it looks in VS Code. If anyone works at Microsoft please [provide a
 syntax highlighter from
 Monaco](https://github.com/microsoft/monaco-editor/discussions/3916) so we can
 all benefit from modern syntax highlighting.
+
+This theme supports light/dark modes, to test in Safari you can simulate it in dev tools.
+
+![safari dev tools](./safari-devtools.png)
 
 ## JSON
 
